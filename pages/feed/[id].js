@@ -1,21 +1,32 @@
 import { addSyntheticLeadingComment } from "typescript";
 import feedStyles from "../../styles/Feed.module.css";
+import Pagination from "../../components/Pagination";
 
 const Feed = ({ pageNumber, articles }) => {
   console.log(pageNumber, articles);
 
   return (
-    <div className={feedStyles.main}>
-      {articles.map((article) => (
-        <div key={article.publishedAt} className={feedStyles.post}>
-          <h1 onClick={() => (window.location.href = article.url)}>
-            {" "}
-            {article.title}
-          </h1>
-          <p>{article.description}</p>
-          {!!article.urlToImage && <img src={article.urlToImage} />}
-        </div>
-      ))}
+    <div className="page-container">
+      <div className={feedStyles.main}>
+        {articles.map((article) => (
+          <div key={article.publishedAt} className={feedStyles.post}>
+            <h1 onClick={() => (window.location.href = article.url)}>
+              {" "}
+              {article.title}
+            </h1>
+            <p>{article.description}</p>
+            {!!article.urlToImage && (
+              <img src={article.urlToImage} alt="article" />
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Pagination
+        pageNumber={pageNumber}
+        articles={articles}
+        feedStyles={feedStyles}
+      />
     </div>
   );
 };
