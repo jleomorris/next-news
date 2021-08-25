@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Nav />
-      <Component {...pageProps} />)
+      <Component {...pageProps} />
     </>
   );
 }
