@@ -5,6 +5,7 @@
   align-items: center;
   flex: 1;
   background: linear-gradient(90deg, #0a0a0a 15%, rgba(31, 31, 31, 0));
+  z-index: 1;
 }
 
 .main h1 {
@@ -14,7 +15,7 @@
 }
 
 .main h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
 }
 
@@ -26,4 +27,17 @@
   width: 100%;
   object-fit: cover;
   z-index: -1;
+}
+
+.feedLink {
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.feedLink:hover {
+  color: #0070f3;
+  border: 2px solid #0070f3;
 }
