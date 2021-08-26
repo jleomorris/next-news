@@ -1,10 +1,11 @@
 .main {
-  width: 100%;
-  height: 50px;
+  height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
+  position: relative;
+  margin: 0 3rem;
 }
 
 .main div {
@@ -14,4 +15,23 @@
 
 .main div:hover {
   color: rgb(168, 168, 168);
+}
+
+.icon {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  margin: 0 !important;
+}
+
+.icon svg {
+  height: 30px;
+  width: 30px;
 }
