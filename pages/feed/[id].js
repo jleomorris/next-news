@@ -1,6 +1,7 @@
 import { addSyntheticLeadingComment } from "typescript";
 import feedStyles from "../../styles/Feed.module.css";
 import Pagination from "../../components/Pagination";
+import Image from "next/image";
 
 const Feed = ({ pageNumber, articles }) => {
   console.log(pageNumber, articles);
@@ -9,14 +10,20 @@ const Feed = ({ pageNumber, articles }) => {
     <div className="page-container">
       <div className={feedStyles.main}>
         {articles.map((article) => (
-          <div key={article.publishedAt} className={feedStyles.post}>
-            <h1 onClick={() => (window.location.href = article.url)}>
-              {" "}
-              {article.title}
-            </h1>
+          <div
+            key={article.publishedAt}
+            className={feedStyles.post}
+            onClick={() => (window.location.href = article.url)}
+          >
+            <h1> {article.title}</h1>
             <p>{article.description}</p>
-            {!!article.urlToImage && (
+            {!!article.urlToImage ? (
               <img src={article.urlToImage} alt="article" />
+            ) : (
+              <Image
+                src="https://images.pexels.com/photos/3944454/pexels-photo-3944454.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                layout="fill"
+              />
             )}
           </div>
         ))}

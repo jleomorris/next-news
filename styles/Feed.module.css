@@ -17,6 +17,7 @@
   padding: 1rem;
   background: linear-gradient(90deg, #222323 15%, rgba(31, 31, 31, 0));
   height: 300px;
+  cursor: pointer;
 }
 
 .post img {
@@ -31,7 +32,6 @@
 
 .post h1 {
   font-size: 20px;
-  cursor: pointer;
   text-align: left;
   color: white;
   width: 90%;
