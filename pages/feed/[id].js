@@ -9,24 +9,25 @@ const Feed = ({ pageNumber, articles }) => {
   return (
     <div className="page-container">
       <div className={feedStyles.main}>
-        {articles.map((article) => (
-          <div
-            key={article.publishedAt}
-            className={feedStyles.post}
-            onClick={() => (window.location.href = article.url)}
-          >
-            <h1> {article.title}</h1>
-            <p>{article.description}</p>
-            {!!article.urlToImage ? (
-              <img src={article.urlToImage} alt="article" />
-            ) : (
-              <Image
-                src="https://images.pexels.com/photos/3944454/pexels-photo-3944454.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                layout="fill"
-              />
-            )}
-          </div>
-        ))}
+        {!!articles &&
+          articles.map((article) => (
+            <div
+              key={article.publishedAt}
+              className={feedStyles.post}
+              onClick={() => (window.location.href = article.url)}
+            >
+              <h1> {article.title}</h1>
+              <p>{article.description}</p>
+              {!!article.urlToImage ? (
+                <img src={article.urlToImage} alt="article" />
+              ) : (
+                <Image
+                  src="https://images.pexels.com/photos/3944454/pexels-photo-3944454.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  layout="fill"
+                />
+              )}
+            </div>
+          ))}
       </div>
 
       <Pagination
