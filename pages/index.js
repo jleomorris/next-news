@@ -5,6 +5,12 @@ import homeStyles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <div className="page-container">
+      <Image
+        src="https://images.pexels.com/photos/5010877/pexels-photo-5010877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1920"
+        layout="fill"
+        className={homeStyles.background}
+        alt="background"
+      />
       <div className={homeStyles.main}>
         <h1>Next.js News App</h1>
         <h3>Your one stop shop for the latest news articles</h3>

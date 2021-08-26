@@ -4,8 +4,26 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  background: linear-gradient(90deg, #0a0a0a 15%, rgba(31, 31, 31, 0));
 }
 
 .main h1 {
-  margin-top: -50px;
+  font-size: 10rem;
+  margin: -50px 0 0 0;
+  color: white;
+}
+
+.main h3 {
+  font-size: 2rem;
+  color: white;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
